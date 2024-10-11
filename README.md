@@ -25,7 +25,7 @@ In the `functions_select_algo` sub-repository you will find the following functi
 
 The performance indicator for each algorithm can then be optain with the following equation : Indicator(n) = mean_NMI(n) * (1 - eam_NMI(n))
 
-An example with an opensource network (`karate`) is available in the subdirectory `exemple_select_algo`.
+An example with an opensource network (`karate`) is available in the subdirectory `example_select_algo`.
 
 # Citation
 If you find those functions useful for your publication, please cite : 
