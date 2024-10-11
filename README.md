@@ -16,7 +16,7 @@ In this file, you'll find the functions we've developed to compute the performan
 For details and application of the method, see "[Too many options: How to identify coalitions in a policy network?](https://www.sciencedirect.com/science/article/pii/S0378873324000376)", Thibaud Deguilhem, Juliette Schlegel, Jean-Philippe Berrou, Ousmane Djibo, Alain Piveteau. Social Networks, Volume 79, 2024, Pages 104-121, ISSN 0378-8733, [https://doi.org/10.1016/j.socnet.2024.06.005](https://doi.org/10.1016/j.socnet.2024.06.005).
 
 # Functions
-In the `functions_select_algo` sub-repository you will find the following functions : 
+In the `functions_select_algo.R` file you will find the following functions : 
 
   - `matrix_NMI()` : Return the matrice of the NMI between each pair of algorithms tested.
   - `plot_NMI()` : Plot the NMI matrice with a color gradient to show the stronger NMI.
@@ -28,7 +28,8 @@ The performance indicator for each algorithm can then be optain with the followi
 Indicator(n) = mean_NMI(n) * (1 - eam_NMI(n))
 ```
 
-An example with an opensource network (`karate`) is available in the subdirectory `example_select_algo`.
+# Example
+An example with an opensource network (`karate`) is available in the file `example_select_algo.R`.
 
 # Citation
 If you find those functions useful for your publication, please cite : 
