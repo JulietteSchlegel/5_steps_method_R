@@ -23,7 +23,8 @@ In the `functions_select_algo` sub-repository you will find the following functi
   - `mean_NMI()` : Compute the convergence of results for each algorithm with its "opponents".
   - `eam_NMI()` : Compute the mean absolute standard deviation for each aglorithm with its "opponents" (mean absolute difference between all pairs of NMI values)
 
-The performance indicator for each algorithm can then be optain with the following equation : Indicator(n) = mean_NMI(n) * (1 - eam_NMI(n))
+The performance indicator for each algorithm can then be optain with the following equation : 
+'''Indicator(n) = mean_NMI(n) * (1 - eam_NMI(n))'''
 
 An example with an opensource network (`karate`) is available in the subdirectory `example_select_algo`.
 
