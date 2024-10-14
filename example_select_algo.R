@@ -134,20 +134,13 @@ matrix_NMI <- function(...) { # /!\ lfunction arguments must be data frames cont
       df_j <- data.frame(Actor = data_frames[[j]]$Actor, 
                          Cluster = as.integer(as.character(data_frames[[j]]$Cluster)))
       
-      # Display debugging information
-      cat("Comparing:", names(data_frames)[i], "and", names(data_frames)[j], "\n")
-      cat("Number of actors in", names(data_frames)[i], ":", nrow(df_i), "\n")
-      cat("Number of actors in", names(data_frames)[j], ":", nrow(df_j), "\n")
       
       # Compute NMI
       Nmi_result <- NMI(df_i, df_j)  
       
       # Extract NMI value
       Nmi_value <- Nmi_result$value 
-      
-      # Make sure the NMI value is a valid number before inserting it.
-      cat("NMI value between", names(data_frames)[i], "and", names(data_frames)[j], ":", Nmi_value, "\n")
-      
+        
       if (!is.na(Nmi_value) && is.finite(Nmi_value)) {
         Nmi_matrice[i, j] <- Nmi_value  # Fill in the matrice
         Nmi_matrice[j, i] <- Nmi_value  # Symmetrical
