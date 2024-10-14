@@ -9,7 +9,6 @@ To select a community detection algorithm that is precisely suited to a given po
   - (2) Select those whose results are consistent in the context
   - (3) Compute the partitioning similarity between each selected algorithm
   - (4) Select the algorithm that maximizes the relevant performance indicator
-  - (5) Perform a robustness test to check the number of clusters selected
 
 In this file, you'll find the functions we've developed to compute the performance indicator as a function of the convergence and heterogeneity of the partitionings proposed by your selection of algorithms.
 
@@ -30,6 +29,12 @@ Indicator(n) = mean_NMI(n) * (1 - eam_NMI(n))
 
 # Example
 An example with an opensource network (`karate`) is available in the file `example_select_algo.R`.
+
+  - (1) We select a number of algorithms from the `igraph` and `concorR` packages using different heuristics to detect clusters in the network : fastgreedy, leading eigen, louvain, walktrap, label propagation, hierarchical clustering with different implementations and concor.
+  - (2) We keep all selected algorithms for the next steps since they provide consistent results (a partition with several clusters, without isolated nodes).
+  - (3) We compute the partitioning similarity between each selected algorithm using the `matrix_NMI()` function and plot the results using `plot_NMI()`.
+  - (4) We then compute the performance indicator using the `mean_NMI()` and `eam_NMI()` functions. We select the algorithm that maximise the equation : `mean_NMI(n) * (1-eam_NMI(n))`
+
 
 # Citation
 If you find those functions useful for your publication, please cite : 
