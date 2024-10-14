@@ -13,7 +13,7 @@ library(igraphdata) #for the Karate network data
 # the results might be strange on the karate network which is not 
 # a policy network and whose links aren't related to coordination relationships 
 
-#1. Donloawd or compute the network  -----------
+#Donloawd or compute the network
 
 data("karate")
 
@@ -26,7 +26,7 @@ Matrice <- as_adjacency_matrix(Graph, names=TRUE, sparse=FALSE, attr = "weight")
 Graph_undirected <- as.undirected(Graph, mode = c("each"))
 
 
-#2. Save algorithm selection partitioning -------------
+#1. Test the selected algorithms  -------------
 
 # example with some modular, hierarchical and structural equivalence methods
 
@@ -75,8 +75,9 @@ Algo7 <- concor(list1,
                 cutoff = .9999999, 
                 max_iter = 50) 
 
+#2. We keep all selected algorithms for the next steps since they provide consistent results 
 
-#3. View the NMI matrix  ----------
+#3. Compute the partitioning similarity between each selected algorithms ----------
 
 # transform our various objects storing information on algorithm partioning
 # into data frames for easier comparison
